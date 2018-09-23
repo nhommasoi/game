@@ -137,53 +137,55 @@ android:orientation="vertical"
             ></ListView>
     </ScrollView>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#c5c2c2"
-    android:orientation="horizontal"
-    >
-    <ImageView
-        android:id="@+id/imgavata"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center"
-        android:background="@drawable/imgbaove"
-
-        />
-    <TextView
-        android:id="@+id/txttenuser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Phu"
-        android:textSize="40dp"
-        android:textColor="#000"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
-        />
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="40dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#c5c2c2"
+        android:orientation="horizontal">
+
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/dola"
-            android:layout_gravity="center"/>
-        <TextView
-            android:id="@+id/txttaisan"
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="5000"
-            android:textSize="30dp"
-            android:textColor="#000"
+            android:id="@+id/imgavata"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:background="@drawable/imgbaove"
+
             />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/txttenuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:text="Phu"
+            android:textColor="#000"
+            android:textSize="40dp" />
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="40dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/dola" />
+
+            <TextView
+                android:id="@+id/txttaisan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="5000"
+                android:textColor="#000"
+                android:textSize="30dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
 

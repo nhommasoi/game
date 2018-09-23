@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="44dp"
         android:gravity="center"
         android:text="List Friends"
         android:textColor="#fff"
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="128dp"
         android:layout_marginTop="80dp"
-        android:background="#00bfff"
+        android:background="@drawable/button"
         android:text="Chơi ngay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btnchonban" />
@@ -42,8 +42,9 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="128dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="80dp"
         android:text="Chọn bàn"
+        android:background="@drawable/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,17 +52,14 @@
     <ImageButton
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="12dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="272dp"
-        android:layout_marginTop="8dp"
         android:background="@drawable/icon_gold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/txtgold"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnchoingay"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.983"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/bgcong"
@@ -74,21 +72,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnchoingay"
-        app:layout_constraintVertical_bias="0.916" />
+        app:layout_constraintVertical_bias="0.961" />
 
 
     <ImageButton
         android:id="@+id/bguser"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="504dp"
+        android:layout_marginTop="228dp"
         android:background="@drawable/user"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnchoingay" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
@@ -96,19 +94,16 @@
         android:layout_width="70dp"
         android:layout_height="26dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="Phú"
         android:textColor="#f00"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toEndOf="@+id/bgcong"
-        app:layout_constraintTop_toBottomOf="@+id/bguser"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.974"
         tools:ignore="MissingConstraints" />
 
     <ListView
