@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
         <activity
-            android:name=".MainActivity"
+            android:name=".login"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,12 +19,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".login"
+            android:name=".MainActivity"
             android:screenOrientation="landscape" />
-        <activity android:name=".signup" />
-        <activity android:name=".Host" />
-        <activity android:name=".room" />
-        <activity android:name=".Ban"></activity>
+        <activity android:name=".signup"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".Host"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".home"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".Ban"
+            android:screenOrientation="landscape"
+            ></activity>
+        <activity android:name=".room"
+            android:screenOrientation="landscape"
+            ></activity>
     </application>
 
 </manifest>

@@ -64,6 +64,43 @@
                 android:text="50"
                 android:textColor="#ffcd17"
                 android:textSize="32dp" />
+            <LinearLayout
+                android:id="@+id/lnrchat"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:fillViewport="true"
+                    android:background="#FFF"
+                    >
+                    <ListView
+                        android:id="@+id/listchat"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"></ListView>
+
+                </ScrollView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/edtchat"
+                        android:layout_width="180dp"
+                        android:layout_height="match_parent" />
+                    <Button
+                        android:id="@+id/btnsend"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="send"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
 
         </RelativeLayout>
 
@@ -182,7 +219,7 @@
                     android:src="@drawable/image_user"
                     android:scaleType="fitCenter"/>
                 <TextView
-                    android:id="@+id/txtuer3"
+                    android:id="@+id/txtuser3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="user3"
@@ -239,7 +276,7 @@
                     android:src="@drawable/image_user"
                     android:scaleType="fitCenter"/>
                 <TextView
-                    android:id="@+id/txtuer6"
+                    android:id="@+id/txtuser6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="user6"
@@ -297,7 +334,7 @@
                     android:scaleType="fitCenter"
                     />
                 <TextView
-                    android:id="@+id/txtuer9"
+                    android:id="@+id/txtuser9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="user9"
