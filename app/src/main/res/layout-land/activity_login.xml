@@ -37,7 +37,11 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:background="#5e5959" />
+
+            android:drawableLeft="@drawable/username"
+            android:background="@drawable/custom_edt"
+
+            />
 
     </LinearLayout>
 
@@ -62,7 +66,9 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:background="#5e5959" />
+            android:drawableLeft="@drawable/password"
+            android:background="@drawable/custom_edt"
+       />
 
     </LinearLayout>
     <LinearLayout
@@ -103,6 +109,13 @@
             android:layout_height="60dp"
             android:background="@drawable/fb"
             />
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp" />
         <ImageButton
             android:layout_marginLeft="20dp"
             android:id="@+id/btngg"
@@ -118,6 +131,12 @@
             android:textColor="#eb5a16"
             android:layout_gravity="center"
             android:layout_marginLeft="160dp"
+            />
+        <com.google.android.gms.common.SignInButton
+
+            android:id="@+id/sign_in_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             />
 
 

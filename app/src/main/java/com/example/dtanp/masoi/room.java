@@ -1,7 +1,10 @@
 package com.example.dtanp.masoi;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.media.Image;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +15,16 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.dtanp.masoi.adapter.CustomAdapter;
+import com.example.dtanp.masoi.control.StaticFirebase;
+import com.example.dtanp.masoi.control.StaticUser;
+import com.example.dtanp.masoi.model.Chat;
 import com.example.dtanp.masoi.model.Phong;
+import com.example.dtanp.masoi.model.User;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,45 +33,23 @@ import static android.widget.Toast.LENGTH_SHORT;
 
 public class room extends Activity {
 
+    private FirebaseDatabase database;
     ListView listroom;
     List<Phong> list;
     Button btnnew;
     ImageView imgback;
+    DatabaseReference reference;
+    CustomAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
+        database = StaticFirebase.database;
+        reference =database.getReference();
         listroom=findViewById(R.id.listroom);
         list=new ArrayList<>();
-        Phong p2 = new Phong("abc",303,"tao ne",4000,4);
-        Phong p1 = new Phong("abc",304,"tao ne",4000,4);
-        Phong p3 = new Phong("abc",305,"tao ne",4000,4);
-        Phong p4 = new Phong("abc",306,"tao ne",4000,4);
-        Phong p5 = new Phong("abc",307,"tao ne",4000,4);
-        Phong p6 = new Phong("abc",308,"tao ne",4000,4);
-        Phong p7 = new Phong("abc",309,"tao ne",4000,4);
-        Phong p8 = new Phong("abc",310,"tao ne",4000,4);
-        Phong p9 = new Phong("abc",311,"tao ne",4000,4);
-        Phong p10 = new Phong("abc",313,"tao ne",4000,4);
-        Phong p11 = new Phong("abc",323,"tao ne",4000,4);
-        Phong p12 = new Phong("abc",333,"tao ne",4000,4);
-        Phong p13 = new Phong("abc",343,"tao ne",4000,4);
-        Phong p14 = new Phong("abc",353,"tao ne",4000,4);
-        list.add(p1);
-        list.add(p2);
-        list.add(p3);
-        list.add(p4);
-        list.add(p5);
-        list.add(p6);
-        list.add(p7);
-        list.add(p8);
-        list.add(p9);
-        list.add(p10);
-        list.add(p11);
-        list.add(p12);
-        list.add(p13);
-        list.add(p14);
-        CustomAdapter adapter = new CustomAdapter(this,R.layout.custom_adapter,list);
+        laylistroom();
+       adapter  = new CustomAdapter(this,R.layout.custom_adapter,list);
         adapter.notifyDataSetChanged();
         listroom.setAdapter(adapter);
         listroom.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -77,8 +67,92 @@ public class room extends Activity {
                 System.out.println("back");
             }
         });
+        btnnew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               startmhhost();
+               finish();
+            }
+        });
+
+        listroom.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                User us = new User();
+                String s = list.get(i).getId();
+                us.setId(s);
+
+                StaticUser.userHost = us;
+                startmhban();
+
+
+            }
+        });
 
 
 
+    }
+
+    public void st()
+    {
+        Intent intent = new Intent(this,newfriend.class);
+        startActivity(intent);
+    }
+
+    public void startmhhost()
+    {
+        Intent intent = new Intent(this,Host.class);
+        startActivity(intent);
+    }
+
+    public void startmhban()
+    {
+        Intent intent = new Intent(this,Ban.class);
+        startActivity(intent);
+    }
+
+    public void listroom()
+    {
+
+    }
+    public void TaoChat()
+    {
+
+    }
+
+    public void laylistroom()
+    {
+      reference.child("Room").addChildEventListener(new ChildEventListener() {
+          @Override
+          public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+              Phong phong = new Phong();
+              phong.setId(dataSnapshot.child("id").getValue(String.class));
+              phong.setSophong(list.size());
+              phong.setTenphong(dataSnapshot.child("tenphong").getValue(String.class));
+              list.add(phong);
+              adapter.notifyDataSetChanged();
+          }
+
+          @Override
+          public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+
+          }
+
+          @Override
+          public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+          }
+
+          @Override
+          public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+          }
+
+          @Override
+          public void onCancelled(@NonNull DatabaseError databaseError) {
+
+          }
+      })   ;
     }
 }

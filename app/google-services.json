@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "388124709244",
+    "firebase_url": "https://game-53ca5.firebaseio.com",
+    "project_id": "game-53ca5",
+    "storage_bucket": "game-53ca5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:388124709244:android:1dd8cdd9c407d7dd",
+        "android_client_info": {
+          "package_name": "com.example.dtanp.masoi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "388124709244-9oouqth8cc56i7nnegua410s1jhmadvp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATaFwBl4qX8ZTZg9ZJpNwIGwmxngH_rvE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
